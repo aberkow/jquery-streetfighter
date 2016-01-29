@@ -30,6 +30,27 @@ $(document).ready(function() {
         $('.ryu-throwing').hide();
         $('.ryu-ready').show();
         
+    })
+    $(document).keydown(function(event) {
+        //x = key 88
+        //trying to make it so that pressing the x works if the mouse is in the div or not.
+        if((event.which == 88) && ($('.ryu').mouseenter == true)){
+            console.log('x down');
+            //$('.ryu-still').hide();
+            $('.ryu-throwing').hide();
+            $('.ryu-ready').hide();
+            $('.ryu-cool').show();
+        }
+        else {
+            $('.ryu-still').show();
+        }
+    })
+    $(document).keyup(function(event) {
+        if(event.which == 88) {
+            console.log('x up');
+            $('.ryu-cool').hide();
+            $('.ryu-ready').show();
+        }
     });
   
 });
