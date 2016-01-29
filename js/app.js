@@ -34,22 +34,30 @@ $(document).ready(function() {
     $(document).keydown(function(event) {
         //x = key 88
         //trying to make it so that pressing the x works if the mouse is in the div or not.
-        if((event.which == 88) && ($('.ryu').mouseenter == true)){
-            console.log('x down');
-            //$('.ryu-still').hide();
-            $('.ryu-throwing').hide();
-            $('.ryu-ready').hide();
-            $('.ryu-cool').show();
+        /*
+        if ((event.which == 88) && $('.ryu').mouseenter == true) {
+            console.log('x down mouse inside');
         }
         else {
-            $('.ryu-still').show();
+            console.log('x down mouse outside');
         }
+        */
+     
+        //the regular way
+        if(event.which == 88) {
+            console.log('x down');
+            $('.ryu-ready').hide();
+            $('.ryu-still').hide();
+            $('.ryu-cool').show();
+        }
+        
     })
     $(document).keyup(function(event) {
         if(event.which == 88) {
             console.log('x up');
             $('.ryu-cool').hide();
             $('.ryu-ready').show();
+            $('.ryu-still').show();
         }
     });
   
