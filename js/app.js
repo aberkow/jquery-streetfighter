@@ -14,8 +14,7 @@ $(document).ready(function() {
         //console.log('mouse down');
         playHadouken();
         $('.ryu-ready').hide();
-        $('.ryu-throwing').show();
-        $('.hadouken').finish().show().animate(
+        $('.ryu-throwing').show(); $('.hadouken').finish().show().animate(
             {'left': '1020px'},
             500,
             function() {
@@ -23,6 +22,7 @@ $(document).ready(function() {
                 $(this).css('left', '520px');
             }
         );
+      
     })
     $('.ryu').mouseup(function() {
         //return to still position
@@ -32,32 +32,15 @@ $(document).ready(function() {
         
     })
     $(document).keydown(function(event) {
-        //x = key 88
-        //trying to make it so that pressing the x works if the mouse is in the div or not.
-        /*
-        if ((event.which == 88) && $('.ryu').mouseenter == true) {
-            console.log('x down mouse inside');
-        }
-        else {
-            console.log('x down mouse outside');
-        }
-        */
-     
-        //the regular way
-        if(event.which == 88) {
-            console.log('x down');
-            $('.ryu-ready').hide();
-            $('.ryu-still').hide();
+        if (event.which == 88) {
             $('.ryu-cool').show();
+            $('.ryu-ready').hide();
         }
-        
     })
     $(document).keyup(function(event) {
-        if(event.which == 88) {
-            console.log('x up');
+        if (event.which == 88) {
             $('.ryu-cool').hide();
             $('.ryu-ready').show();
-            $('.ryu-still').show();
         }
     });
   
